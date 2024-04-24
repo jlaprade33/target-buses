@@ -1,4 +1,6 @@
-// set up theming here
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+// set up theming colors
 const colors = {
   font: {
     white: '#fff',
@@ -15,10 +17,24 @@ const colors = {
 }
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [],
+export default {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        logo: '221px'
+      },
+      height: {
+        logo: '36px',
+        header: '72px',
+        headerImg: '20rem',
+      },
+      fontFamily: {
+        //Roboto referenced from transit website
+        roboto: ['Roboto', ...defaultTheme.fontFamily.sans]
+      },
+      colors: {...colors},
+    },
   },
   plugins: [],
 }

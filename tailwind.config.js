@@ -4,15 +4,19 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = {
   font: {
     white: '#fff',
-    blue: '#047db5',
+    blue: '#0096FF',
     darkGray: '#626462',
-    lightGray: '#8a8b8a'
+    lightGray: '#8a8b8a',
+    red: '#EE4B2B',
   },
   background: {
     blue: '#0097d0',
     lightBlue: '#dbf4fd',
     lightGray: '#f5f5f4',
     yellow: '#ffd200',   
+  },
+  borders: {
+    dropdown: '1px solid #e3e3e0'
   }
 }
 
@@ -22,7 +26,8 @@ export default {
   theme: {
     extend: {
       width: {
-        logo: '221px'
+        logo: '221px',
+        dropdown: '2/5'
       },
       height: {
         logo: '36px',

@@ -39,7 +39,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 #### 5. Since the data being fetched is fairly simple, I implemented a simple fetch calls to receive them instead of creating a more complex api section in the app. I felt this way, I could focus more on the styling and functionality since these are just GET calls.
 
 
-
+## I have deployed this app to a simple review app using AWS Amplify
+- To see the app running live, check it out here: https://dev.dzkt784heniq2.amplifyapp.com/
 
 
 

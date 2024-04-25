@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Dropdown } from '../../components/Dropdown';
-import { useParams, useNavigate } from 'react-router-dom';
-import { directionType, fieldInput } from '../../constants';
+import { useParams } from 'react-router-dom';
+import { fieldInput } from '../../constants';
 import { RouteSelect } from './RouteSelect';
 import { DirectionSelect } from './DirectionSelect';
 import { StopSelect } from './StopSelect';
 
 import { parseRoutes } from '../helpers';
+import { DisplayTable } from '../../components/DisplayTable';
 
 const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
@@ -16,26 +16,40 @@ export function Selection(){
     const [selectedRoute, setSelectedRoute] = useState<string>("");
     const [selectedDirection, setSelectedDirection] = useState<string | number>("");
     const [selectedStop, setSelectedStop] = useState<string>("");
+    const [tableData, setTableData] = useState<any>();
 
     const params = useParams();
-    const navigate = useNavigate();
     
     useEffect(() => {
         getRoutes();
     },[]);
+
+    useEffect(() => {
+        if(params.routeId && params.directionId && params.stopId){
+            getTableData()
+        }
+    },[params]);
 
     const getRoutes = async() => {
         try{
             const response = await fetch(`${apiRoute}/routes`)
             const output = await response.json();
             const parsedOutput = parseRoutes(output)
-            console.log('parsedOutput',parsedOutput)
             setFetchedRoutes(parsedOutput);
         }catch(err){
             console.log('error fetching routes:', err)
         }
     };
-
+    
+    const getTableData = async() => {
+        try{
+            const response = await fetch(`${apiRoute}/${params.routeId}/${params.directionId}/${params.stopId}`)
+            const output = await response.json();
+            setTableData(output)
+        }catch(err){
+            console.log('error fetching routes:', err)
+        }
+    }
     return(
         <div className="mt-10">
             <RouteSelect
@@ -51,6 +65,13 @@ export function Selection(){
                 <StopSelect
                     setSelectedStop={setSelectedStop}
                 /> : null
+            }
+            {
+                tableData ? (
+                    <div className="mx-auto my-8 w-2/3 min-w-[700px]">
+                        <DisplayTable tableData={tableData} />
+                    </div>
+                ) : null
             }
         </div>
     )

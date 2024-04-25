@@ -26,7 +26,6 @@ export function StopSelect({setSelectedStop}: StopSelectProps){
         try{
             const response = await fetch(`${apiRoute}/stops/${params.routeId}/${params.directionId}`)
             const output = await response.json();
-            console.log('output', output)
             const parsedOutput = parseStops(output)
             setFetchedStops(parsedOutput)
         }catch(err){

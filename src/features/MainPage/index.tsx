@@ -9,7 +9,9 @@ export function MainPage(){
         <div className="h-full w-full pb-40">
             <PageHeader />
             <HeaderImage />
-            <Heading title="Real-time Departures" size="lg" />
+            <div className="my-12">
+                <Heading title="Real-time Departures" size="lg" />
+            </div>
             <ToggleSelect />
             <Selection />
         </div>

@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Dropdown } from '../../components/Dropdown';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fieldInput } from '../../constants';
-
-const apiRoute = "https://svc.metrotransit.org/nextripv2";
 
 interface RouteSelectProps {
     setSelectedRoute:  React.Dispatch<React.SetStateAction<string>>;
@@ -29,7 +26,7 @@ export function RouteSelect({setSelectedRoute, fetchedRoutes}: RouteSelectProps)
                 <Dropdown 
                     label={'route'} 
                     handleChange={handleChange} 
-                    placeholder={"Select Route"} 
+                    placeholder={"Select route"} 
                     list={fetchedRoutes} 
                 /> : null
             }

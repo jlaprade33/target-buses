@@ -13,11 +13,9 @@ export function RouteSelect({setSelectedRoute, fetchedRoutes}: RouteSelectProps)
     const navigate = useNavigate();
 
     const handleChange = (e: any) => {
-        if(!params.routeId){
-            const routeId = e.target.value
-            navigate(`/${routeId}`)
-            setSelectedRoute(routeId)
-        }
+        const routeId = e.target.value
+        navigate(`/${routeId}`)
+        setSelectedRoute(routeId)
     };
 
     return(

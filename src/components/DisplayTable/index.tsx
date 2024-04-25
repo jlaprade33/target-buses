@@ -1,5 +1,7 @@
-import clsx from 'clsx';
-import { Heading } from "../Typography";
+import { useState } from 'react';
+import { Heading, Text } from "../Typography";
+import expand from './expand.svg';
+import minimize from './minimize.svg';
 
 interface TableProps {
     tableData: TableArrayProps;
@@ -55,7 +57,8 @@ type KeyTypes = 'departure_text'| 'description' | 'route_short_name';
 
 
 export function DisplayTable({tableData}: TableProps){
-    const tableRow = tableData.departures
+    const [expanded, setExpanded] = useState<boolean>(false);
+    const tableRow = tableData.departures.slice(0, !expanded ? 3 : tableData.departures.length)
     const tableHeader = tableData.stops[0]
     return(
         <div className="bg-background-lightGray">
@@ -65,7 +68,7 @@ export function DisplayTable({tableData}: TableProps){
                     <b>Stop #:</b>{tableHeader.stop_id}
                 </div>
             </div>
-            <table className="w-full min-h-[400px]">
+            <table className="w-full min-h-[120px]">
                 <thead className="bg-background-yellow text-font-darkGray py-6 uppercase">
                     <tr className="h-16 text-xl">
                        {
@@ -76,7 +79,7 @@ export function DisplayTable({tableData}: TableProps){
                     </tr>
                 </thead>
                 <tbody>
-                    {tableRow.map((rowItem, rowIndex) => (
+                    {Array.isArray(tableRow) && tableRow.length > 0 ? tableRow.map((rowItem, rowIndex) => (
                         <tr className={`h-16 ${rowIndex !== 0 ? 'border-t-[1px] border-font-darkGray' : ''}`} key={rowIndex}>
                             {tableFields.map((tableItem, colIndex: number) => {
                                 const keyType: KeyTypes = tableItem.key as KeyTypes;
@@ -90,9 +93,19 @@ export function DisplayTable({tableData}: TableProps){
                                 );
                             })}
                         </tr>
-                    ))}
+                    )) : <tr><p className="p-4 font-bold text-font-darkGray">There are no depatures at this time</p></tr>}
                 </tbody>
             </table>
+            {
+                tableData.departures.length > 3 ? (
+                    <div onClick={()=>setExpanded(!expanded)} className="flex justify-start border-t-[1px] border-font-darkGray cursor-pointer hover:opacity-50 transition-opacity transition-500">
+                        <img className="p-4" src={expanded ? minimize : expand} alt='expand' />
+                        <div className="my-4 -ml-1">
+                            <Text text={expanded ? 'View Less' : 'View More'} size="sm" color="dark" />
+                        </div>
+                    </div>
+                ) : null
+            }
         </div>
     )
 };

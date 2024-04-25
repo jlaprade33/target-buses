@@ -68,7 +68,7 @@ export function Selection(){
             }
             {
                 tableData ? (
-                    <div className="mx-auto my-8 w-2/3 min-w-[700px]">
+                    <div className="mx-auto my-12 w-2/3 min-w-[700px]">
                         <DisplayTable tableData={tableData} />
                     </div>
                 ) : null

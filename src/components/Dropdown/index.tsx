@@ -1,8 +1,8 @@
 import { ChangeEvent } from 'react';
-import { listType } from '../../constants';
+import { fieldInput } from '../../constants';
 
 interface DropdownProps {
-    list: listType[];
+    list: fieldInput[];
     placeholder: string;
     label: string;
     handleChange: (e: ChangeEvent<HTMLSelectElement>)=>void;
@@ -19,7 +19,7 @@ export function Dropdown({list, placeholder, handleChange, label}: DropdownProps
                 <option value="">{placeholder}</option>
                 {
                     list.map((item, index) => {
-                        return <option key={index} value={item.route_label}>{item.route_label}</option>
+                        return <option key={index} value={item.id}>{item.name}</option>
                     })
                 }
                 

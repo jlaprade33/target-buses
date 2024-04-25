@@ -5,8 +5,9 @@ export function Router() {
     return(
         <BrowserRouter basename='/'>
             <Routes>
-                <Route path="/:route" element={<MainPage />} />
-                <Route path="/:route/:direction" element={<MainPage />} />
+                <Route path="/:routeId" element={<MainPage />} />
+                <Route path="/:routeId/:directionId" element={<MainPage />} />
+                <Route path="/:routeId/:directionId/:stopId" element={<MainPage />} />
                 <Route path="/*" element={<MainPage />}/>
             </Routes>
         </BrowserRouter>

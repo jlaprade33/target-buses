@@ -19,6 +19,39 @@ export type fieldInput = {
     name: string;
     id: number | string;
 }
+
+
+export interface TableProps {
+  tableData: TableArrayProps;
+};
+
+interface TableArrayProps {
+  alerts: any[];
+  departures: departureData[];
+  stops: stopData[];
+}
+
+type stopData = {
+  description: string;
+  stop_id: number;
+  latitude: number;
+  longitude: number;
+};
+
+type departureData = {
+  actual: boolean;
+  departure_time: number;
+  departure_text: string;
+  description: string;
+  direction_id: number;
+  direction_text: string;
+  gate: string;
+  route_id: string;
+  route_short_name: string;
+  schedule_relationship: string;
+  stop_id: number;
+  trip_id: string;
+};
  
 
 export const testData = {

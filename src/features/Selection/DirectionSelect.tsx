@@ -8,9 +8,10 @@ const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
 interface DirectionSelectProps {
     id?: string;
+    setSelectedDirection: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export function DirectionSelect({id}: DirectionSelectProps){
+export function DirectionSelect({id, setSelectedDirection}: DirectionSelectProps){
     const [fetchedDirections, setFetchedDirections] = useState<fieldInput[] | []>([]);
 
     const params = useParams();
@@ -37,6 +38,7 @@ export function DirectionSelect({id}: DirectionSelectProps){
         if(params.routeId){
             const direction = e.target.value
             navigate(`/${params.routeId}/${direction}`)
+            setSelectedDirection(direction)
         }
     };
 

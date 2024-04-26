@@ -13,6 +13,7 @@ const apiRoute = "https://svc.metrotransit.org/nextripv2"
 export function Selection(){
     const [fetchedRoutes, setFetchedRoutes] = useState<fieldInput[] | []>([]);
     const [selectedRoute, setSelectedRoute] = useState<string>("");
+    const [selectedDirection, setSelectedDirection] = useState<string>("");
     const [tableData, setTableData] = useState<any>();
 
     const params = useParams();
@@ -55,9 +56,12 @@ export function Selection(){
                 id="route-select"
             />
             {params.routeId ? 
-                <DirectionSelect id="direction-select" /> : null
+                <DirectionSelect 
+                    id="direction-select" 
+                    setSelectedDirection={setSelectedDirection}
+                /> : null
             }
-            {(params.routeId || selectedRoute) && (params.directionId) ? 
+            {(params.routeId || selectedRoute) && (params.directionId || selectedDirection) ? 
                 <StopSelect
                     id="stop-select"
                 /> : null

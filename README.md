@@ -8,10 +8,13 @@ To get this project up and running, just follow the simple steps below
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Testing is implemented with Cypress
+#### In one terminal run `npm start`
+#### In a second terminal run `npm run cypress`
+#### From there, open the browser of your choosing to run the tests, which are the following:
+- Component tests on the following: `<DisplayTable />` `<HeaderImage />` `<Heading />` `<Text />` `<DisplayTable />`
+- End to end tests to select all three dropdown options
 
 ### `npm run build`
 

@@ -20,6 +20,12 @@ describe('Transit flow', () => {
 
       //Confirm display table is present
       cy.get('#display-table').should('exist')
+
+      //Confirm Stop Header is correct
+      cy.get('#stop-header').should('have.text', 'U.S. Bank Stadium Station')
+      
+      //Confirm Stop ID is correct
+      cy.get('#stop-id').should('have.text', 56338)
     })
   
   });

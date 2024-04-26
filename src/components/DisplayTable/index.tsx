@@ -65,9 +65,9 @@ export function DisplayTable({tableData}: TableProps){
     return(
         <div id="display-table" className="bg-background-lightGray">
             <div className="flex justify-between w-full p-5 h-16 text-font-darkGray">
-                <div><Heading title={tableHeader.description} size="md" /></div>
+                <div><Heading id="stop-header" title={tableHeader.description} size="md" /></div>
                 <div>
-                    <b>Stop #:</b>{tableHeader.stop_id}
+                    <b>Stop #:</b><span id="stop-id">{tableHeader.stop_id}</span>
                 </div>
             </div>
             <table className="w-full min-h-[120px]">

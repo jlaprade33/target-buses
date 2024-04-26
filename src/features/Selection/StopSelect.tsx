@@ -7,10 +7,11 @@ import { parseStops } from '../helpers';
 const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
 interface StopSelectProps {
+    id?: string;
     setSelectedStop: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function StopSelect({setSelectedStop}: StopSelectProps){
+export function StopSelect({id, setSelectedStop}: StopSelectProps){
     const [fetchedStops, setFetchedStops] = useState<fieldInput[] | []>([]);
 
     const params = useParams();
@@ -46,6 +47,7 @@ export function StopSelect({setSelectedStop}: StopSelectProps){
             handleChange={handleChange} 
             placeholder={"Select stop"} 
             list={fetchedStops} 
+            id={id}
         />
     )
 };

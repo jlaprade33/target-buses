@@ -6,15 +6,17 @@ interface DropdownProps {
     placeholder: string;
     label: string;
     handleChange: (e: ChangeEvent<HTMLSelectElement>)=>void;
+    id?: string;
 };
 
-export function Dropdown({list, placeholder, handleChange, label}: DropdownProps){
+export function Dropdown({id, list, placeholder, handleChange, label}: DropdownProps){
     return(
         <div className='w-dropdown max-w-[600px] mx-auto my-4'>
             <select 
                 className="w-full h-[60px] px-2 border border-borders-dropdown" 
                 name={label}
                 onChange={handleChange}
+                id={id ?? 'select-component'}
             >
                 <option value="">{placeholder}</option>
                 {

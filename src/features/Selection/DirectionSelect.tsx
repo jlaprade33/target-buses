@@ -6,7 +6,11 @@ import { parseDirections } from '../helpers';
 
 const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
-export function DirectionSelect(){
+interface DirectionSelectProps {
+    id?: string;
+};
+
+export function DirectionSelect({id}: DirectionSelectProps){
     const [fetchedDirections, setFetchedDirections] = useState<fieldInput[] | []>([]);
 
     const params = useParams();
@@ -42,6 +46,7 @@ export function DirectionSelect(){
             handleChange={handleChange} 
             placeholder={"Select direction"} 
             list={fetchedDirections} 
+            id={id}
         />
     )
 };

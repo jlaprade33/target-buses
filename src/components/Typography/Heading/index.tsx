@@ -7,7 +7,7 @@ interface HeadingProps {
 
 export function Heading({title, size}: HeadingProps){
     return(
-        <h2 className={clsx(
+        <h2 id="heading" className={clsx(
             "w-fit font-bold text-font-darkGray mx-auto",
             size === 'lg' ? 'text-[32px]' : size === 'md' ? 'text-[20px]' : 'text-[14px]'
         )}>

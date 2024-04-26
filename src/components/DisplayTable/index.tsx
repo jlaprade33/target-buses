@@ -63,7 +63,7 @@ export function DisplayTable({tableData}: TableProps){
     const tableRow = tableData?.departures?.slice(0, !expanded ? 3 : tableData.departures.length)
     const tableHeader = tableData.stops[0]
     return(
-        <div className="bg-background-lightGray">
+        <div id="display-table" className="bg-background-lightGray">
             <div className="flex justify-between w-full p-5 h-16 text-font-darkGray">
                 <div><Heading title={tableHeader.description} size="md" /></div>
                 <div>

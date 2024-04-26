@@ -5,9 +5,10 @@ import { fieldInput } from '../../constants';
 interface RouteSelectProps {
     setSelectedRoute:  React.Dispatch<React.SetStateAction<string>>;
     fetchedRoutes: fieldInput[];
+    id?: string;
 }
 
-export function RouteSelect({setSelectedRoute, fetchedRoutes}: RouteSelectProps){
+export function RouteSelect({id, setSelectedRoute, fetchedRoutes}: RouteSelectProps){
 
     const params = useParams();
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ export function RouteSelect({setSelectedRoute, fetchedRoutes}: RouteSelectProps)
                     handleChange={handleChange} 
                     placeholder={"Select route"} 
                     list={fetchedRoutes} 
+                    id={id}
                 /> : null
             }
         </div>

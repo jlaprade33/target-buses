@@ -55,13 +55,15 @@ export function Selection(){
             <RouteSelect
                 setSelectedRoute={setSelectedRoute}
                 fetchedRoutes={fetchedRoutes}
+                id="route-select"
             />
-            {params.routeId || selectedRoute ? 
-                <DirectionSelect /> : null
+            {params.routeId ? 
+                <DirectionSelect id="direction-select" /> : null
             }
             {(params.routeId || selectedRoute) && (params.directionId || selectedDirection) ? 
                 <StopSelect
                     setSelectedStop={setSelectedStop}
+                    id="stop-select"
                 /> : null
             }
             {

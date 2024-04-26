@@ -8,6 +8,7 @@ export function PageHeader(){
                     className="h-logo w-logo mt-5" 
                     src={'/logo.svg'}
                     alt='logo'
+                    id="PageHeader"
                 />
             </div>
         </div>

@@ -3,11 +3,11 @@ import clsx from 'clsx';
 interface TextProps {
     text: string;
     size?: 'sm' | 'md' | 'lg';
-    color: 'light' | 'dark' | 'darkest';
+    color?: 'light' | 'dark' | 'darkest';
     bold?: boolean;
 }
 
-export function Text({text, size, color}: TextProps){
+export function Text({text, size, color = 'light'}: TextProps){
     return(
         <span className={clsx(
             "w-fit",

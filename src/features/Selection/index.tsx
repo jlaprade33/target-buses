@@ -57,9 +57,7 @@ export function Selection(){
                 fetchedRoutes={fetchedRoutes}
             />
             {params.routeId || selectedRoute ? 
-                <DirectionSelect
-                    setSelectedDirection={setSelectedDirection}
-                /> : null
+                <DirectionSelect /> : null
             }
             {(params.routeId || selectedRoute) && (params.directionId || selectedDirection) ? 
                 <StopSelect

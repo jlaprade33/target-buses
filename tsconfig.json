@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": ["cypress"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,6 +23,8 @@
   },
   "include": [
     "src",
-    "tailwind.config.js"
-  ]
+    "tailwind.config.js",
+    "cypress.d.ts"
+  ],
+  "exclude": ["cypress"]
 }

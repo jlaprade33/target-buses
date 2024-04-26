@@ -60,7 +60,7 @@ type KeyTypes = 'departure_text'| 'description' | 'route_short_name';
 
 export function DisplayTable({tableData}: TableProps){
     const [expanded, setExpanded] = useState<boolean>(false);
-    const tableRow = tableData.departures.slice(0, !expanded ? 3 : tableData.departures.length)
+    const tableRow = tableData?.departures?.slice(0, !expanded ? 3 : tableData.departures.length)
     const tableHeader = tableData.stops[0]
     return(
         <div className="bg-background-lightGray">

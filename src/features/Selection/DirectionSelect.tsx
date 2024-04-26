@@ -6,11 +6,7 @@ import { parseDirections } from '../helpers';
 
 const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
-interface DirectionSelectProps {
-    setSelectedDirection: React.Dispatch<React.SetStateAction<string | number>>;
-}
-
-export function DirectionSelect({setSelectedDirection}: DirectionSelectProps){
+export function DirectionSelect(){
     const [fetchedDirections, setFetchedDirections] = useState<fieldInput[] | []>([]);
 
     const params = useParams();

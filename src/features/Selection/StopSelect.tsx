@@ -8,10 +8,9 @@ const apiRoute = "https://svc.metrotransit.org/nextripv2"
 
 interface StopSelectProps {
     id?: string;
-    setSelectedStop: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function StopSelect({id, setSelectedStop}: StopSelectProps){
+export function StopSelect({id}: StopSelectProps){
     const [fetchedStops, setFetchedStops] = useState<fieldInput[] | []>([]);
 
     const params = useParams();

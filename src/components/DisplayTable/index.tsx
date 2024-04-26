@@ -39,17 +39,19 @@ const tableFields = [
     {
         header: "Route",
         key: "route_short_name",
-        width: '1/5'
+        width: '1/5',
+        bold: 'bold'
     },
     {
         header: "Destination",
         key: "description",
-        width: '3/5'
+        width: '4/5',
+        bold: 'medium'
     },
     {
         header: "Departs",
         key: "departure_text",
-        width: '1/5'
+        bold: 'bold'
     }
 ];
 
@@ -80,12 +82,12 @@ export function DisplayTable({tableData}: TableProps){
                 </thead>
                 <tbody>
                     {Array.isArray(tableRow) && tableRow.length > 0 ? tableRow.map((rowItem, rowIndex) => (
-                        <tr className={`h-16 ${rowIndex !== 0 ? 'border-t-[1px] border-font-darkGray' : ''}`} key={rowIndex}>
+                        <tr className={`h-16  ${rowIndex !== 0 ? 'border-t-[1px] border-font-darkGray' : ''}`} key={rowIndex}>
                             {tableFields.map((tableItem, colIndex: number) => {
                                 const keyType: KeyTypes = tableItem.key as KeyTypes;
                                 return (
                                     <td
-                                        className={`w-${tableItem.width} px-4`}
+                                        className={`w-${tableItem.width} font-${tableItem.bold} px-4`}
                                         key={colIndex}
                                     >
                                         {rowItem[keyType]}

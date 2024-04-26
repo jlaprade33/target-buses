@@ -6,7 +6,7 @@ import { Heading } from '../../components/Typography';
 
 export function MainPage(){
     return(
-        <div className="h-full w-full pb-40">
+        <div className="h-full w-full pb-10">
             <PageHeader />
             <HeaderImage />
             <div className="my-12">

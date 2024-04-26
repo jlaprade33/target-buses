@@ -2,7 +2,7 @@
 
 To get this project up and running, just follow the simple steps below
 
-### `npm install (if you haven't already)`
+### `npm install` (if you haven't already)
 ### `npm start`
 
 Runs the app in the development mode.\

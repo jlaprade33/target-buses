@@ -41,6 +41,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 #### 5. Since the data being fetched is fairly simple, I implemented a simple fetch calls to receive them instead of creating a more complex api section in the app. I felt this way, I could focus more on the styling and functionality since these are just GET calls.
 
+#### 6. I implemented simple tests with Cypress for components and an end to end test for the entire flow. I hope these tests show I can implement cypress effectively, while I also hope that the evaluator can consider that the bulk of my time was spent on building this app and ensuring functionality.
 
 ## I have deployed this app to a simple review app using AWS Amplify
 - To see the app running live, check it out here: https://dev.dzkt784heniq2.amplifyapp.com/

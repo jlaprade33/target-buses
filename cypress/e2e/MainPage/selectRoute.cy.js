@@ -8,7 +8,6 @@ describe('Transit flow', () => {
   });
 
   it('Select a Route Option', () => {
-    // which are the two default items.
     cy.get('#PageHeader').should('exist')
     cy.get('#HeaderImage').should('exist')
     cy.get('#heading').should('exist')

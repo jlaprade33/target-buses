@@ -67,7 +67,7 @@ export function Selection(){
                 /> : null
             }
             {
-                tableData ? (
+                params.routeId && params.directionId && params.stopId && tableData ? (
                     <div className="mx-auto my-12 w-2/3 min-w-[700px]">
                         <DisplayTable tableData={tableData} />
                     </div>

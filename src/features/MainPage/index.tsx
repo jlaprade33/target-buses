@@ -7,7 +7,7 @@ import { Routes } from 'react-router-dom';
 
 export function MainPage(){
     return(
-        <div className="h-full w-full pb-10">
+        <div className="h-full w-full pb-16">
             <PageHeader />
             <HeaderImage />
             <div className="my-12">
